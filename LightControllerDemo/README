@@ -1,0 +1,8 @@
+An Arduino Light Controller:
+  - Experimenting with LED effects
+
+LightControllerDemo.ino:
+  - Example Arduino Sketchbook
+
+LightController.h & LightController.cpp:
+  - Implementation of effects & light management
