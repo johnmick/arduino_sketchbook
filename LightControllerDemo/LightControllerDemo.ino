@@ -6,8 +6,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Modes
 ///////////////////////////////////////////////////////////////////////////////
+  const bool sound_enabled                = true;
+
   const int mode_light_snake_enabled      = true;
-  const int mode_light_checkboard_enabled = false;
+  const int mode_light_checkboard_enabled = true;
   const int mode_light_pong_enabled       = true;
 
 
@@ -54,13 +56,15 @@
 
       LightController::Snake( pin_num_leds, number_of_lights,
          4,  // Tail Size
-        15,  // Tail Appear Delay Min
-        50,  // Tail Appear Delay Max
+        40,  // Tail Appear Delay Min
+        150,  // Tail Appear Delay Max
      
-        15,  // Tail Disappear Delay Min
-        35,  // Tail Disappear Delay Max
+        50,  // Tail Disappear Delay Min
+        175,  // Tail Disappear Delay Max
 
-        20   // Light Total Snakes
+        10,  // Light Total Snakes,
+        sound_enabled,
+        pin_num_speaker
       );
     }
 
@@ -69,9 +73,11 @@
       delay(250);
 
       LightController::Checkboard( pin_num_leds, number_of_lights,
-        10,  // Total Flashes
+        15,  // Total Flashes
         175, // Delay Min
-        175  // Delay Max
+        175, // Delay Max
+        sound_enabled,
+        pin_num_speaker
       );
 
     }
@@ -81,10 +87,12 @@
       delay(250);
 
       LightController::Pong( pin_num_leds, number_of_lights,
-        25, // Delay
+        50, // Delay
         20, // Number of Passes
         10, // Number of Endpoint Flashes
-        40  // Endpoint Flash Delay
+        40, // Endpoint Flash Delay
+        sound_enabled,
+        pin_num_speaker
       );
     }
   }
